@@ -1,0 +1,217 @@
+<%= render partial: "static/dashboard", locals: { messages: ["Hello", "thing"] } %>
+
+
+
+
+<div class="container">
+<div class="divider"></div>
+
+
+
+
+  <div class="row">
+
+
+<% if @play %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/toy.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">FAVORITE TOY<i class="material-icons right">more_vert</i></span>
+               <p><%= @play.toy %></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">FAVORITE TOY<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% else %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/toy.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">FAVORITE TOY<i class="material-icons right">more_vert</i></span>
+               <p></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">FAVORITE TOY<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% end %>
+
+
+
+<% if @play %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/park.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">LOCAL PARK<i class="material-icons right">more_vert</i></span>
+               <p><%= @play.park %></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">LOCAL PARK<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% else %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/park.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">LOCAL PARK<i class="material-icons right">more_vert</i></span>
+               <p></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">LOCAL PARK<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% end %>
+
+
+
+
+<% if @play %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/games.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">FAVORITE GAMES<i class="material-icons right">more_vert</i></span>
+               <p><%= @play.games %></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">FAVORITE GAMES<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% else %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/games.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">FAVORITE GAMES<i class="material-icons right">more_vert</i></span>
+               <p></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">FAVORITE GAMES<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="row">
+
+
+
+<% if @play %>    
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/habits.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">REGULAR HABITS<i class="material-icons right">more_vert</i></span>
+               <p><%= @play.habits %></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">REGULAR HABITS<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% else %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/habits.jpg)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">REGULAR HABITS<i class="material-icons right">more_vert</i></span>
+               <p></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">REGULAR HABITS<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% end %>
+
+
+
+<% if @play %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/notes.png)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">ADDITIONAL DETAILS<i class="material-icons right">more_vert</i></span>
+               <p><%= @play.additional_details %></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">ADDITIONAL DETAILS<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% else %>
+    <div class="col l4 m6 s12">
+      <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/notes.png)">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">ADDITIONAL DETAILS<i class="material-icons right">more_vert</i></span>
+               <p></p>
+             </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">ADDITIONAL DETAILS<i class="material-icons right">close</i></span>
+            <p></p>
+          </div>
+      </div>
+    </div>
+<% end %>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<% if @play %>
+<a href="<%= play_edit_path(@play.id) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Edit Play Information</a>
+
+  <% else %>
+
+<a href="<%= play_new_path(params[:pet_id]) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Play Information</a>
+
+  <% end %>
+
+</div>

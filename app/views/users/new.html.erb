@@ -1,0 +1,49 @@
+
+<div class="container">
+
+  <fieldset>
+  <legend>Welcome to PetGuru!</legend>
+
+  <form action="<%= users_path %>" method="post">
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+
+    <div class="input-field row">
+    <label for="newUserEmail">EMAIL</label>
+    <input  id="newUserEmail"
+            type="email" 
+            name="user[email]">
+    </div>
+
+    <div class="input-field row">
+    <label for="newPassword">PASSWORD (8 character minimum)</label>
+    <input  id="newPassword"
+            type="password" 
+            name="user[password]">
+    </div>
+
+
+    <div class="input-field row">
+    <label for="newPasswordConf">CONFIRM PASSWORD</label>
+    <input  id="newPasswordConf"
+            type="password" 
+            name="user[password_confirmation]">
+    </div>
+
+
+<div class="input-field row">            
+    <button class="btn waves-effect waves-light" 
+            type="submit" 
+            name="action">JOIN UP!
+    </button>
+
+
+  </fieldset>
+  </form>
+
+
+  <br />
+
+  <a href="<%= new_session_path %>">SIGN IN INSTEAD</a>
+</div>

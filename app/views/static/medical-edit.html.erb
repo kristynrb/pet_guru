@@ -1,0 +1,139 @@
+<div class="container">
+
+<fieldset>
+  <legend>&nbspEdit Your Pet's Medical Information&nbsp</legend>
+
+  <form action="<%= medical_update_path(params[:medical_id]) %>" method="post" >
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+    <input  type="hidden" name="_method" value="patch">
+
+
+
+
+    <h5>VITALS</h5>
+    <div class="row">
+        <div class="col s6"><label for="petWeight">Weight (in pounds)</label><input id="petWeight" type="integer" name="medical[weight]" value="<%= @medical.weight %>"></div>
+        <div class="col s6"><label for="petHeight">Height (in inches)</label><input id="petHeight" type="integer" name="medical[height]" value="<%= @medical.height %>"></div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label class="active" for="petGender">Gender</label><input id="petGender" type="text" name="medical[gender]" value="<%= @medical.gender %>">
+      </div>
+      <div class="input-field col s6">
+        <label class="active" for="microchip">Microchip ID number</label><input id="microchip" type="text" name="medical[microchip_id]" value="<%= @medical.microchip_id %>">
+      </div>
+    </div>
+
+
+    <br />
+    <h5>SHOTS</h5>
+    <div class="row">
+      <div class="col s6">
+        <label>Previous Shot Date</label><input type="text" id="datepicker" name="medical[pshots_date]" value="<%= @medical.pshots_date %>">
+      </div>
+      <div class="col s6">
+        <label for="prevShotName">Previous Shot Name</label><input id="prevShotName" type="text" name="medical[pshots_name]" value="<%= @medical.pshots_name %>">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <label>Upcoming Shot Date</label><input type="text" id="datepicker2" name="medical[ushots_date]" value="<%= @medical.ushots_date %>">
+      </div>
+      <div class="col s6">
+        <label>Upcoming Shot Name</label><input type="text" name="medical[ushots_name]" value="<%= @medical.ushots_name %>">
+      </div>
+    </div>
+
+
+    <br />
+    <h5>ALLERGIES</h5>
+    <div class="row"> 
+      <div class="input-field col s12">
+        <label class="active" for="allergies">Does your pet have any allergies?</label><input id="allergies" type="text" name="medical[allergies]" value="<%= @medical.allergies %>">
+      </div>
+    </div>
+
+
+    <br />
+    <h5>VETERINARY CONTACT INFORMATION</h5>
+      <div class="row">
+        <div class="input-field col s6">
+          <label class="active" for="rvon">Regular Vet Office Name</label><input id="rvon" type="text" name="medical[r_vet_name]" value="<%= @medical.r_vet_name %>">
+        </div>
+        <div class="input-field col s6">
+          <label class="active" for="rdn">Regular Doctor's Name</label><input id="rdn" type="text" name="medical[r_vet_doctor]" value="<%= @medical.r_vet_doctor %>">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <label class="active" for="saddy">Street Address</label><input id="saddy"  type="text" name="medical[r_vet_address]" value="<%= @medical.r_vet_address %>">
+        </div>
+        <div class="input-field col s4">
+          <label class="active" for="city">City</label><input id="city" type="text" name="medical[r_vet_address_city]" value="<%= @medical.r_vet_address_city %>">
+        </div>
+        <div class="input-field col s4">
+          <label class="active" for="state">State</label><input id="state" type="text" name="medical[r_vet_address_state]" value="<%= @medical.r_vet_address_state %>">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <label class="active" for="zippy">Zip Code</label><input id="zippy" type="text" pattern="[0-9]*" name="medical[r_vet_zip]" value="<%= @medical.r_vet_zip %>">
+        </div>
+        <div class="input-field col s6">        
+          <label class="active" for="phoney">Phone Number</label><input id="phoney" type="text" name="medical[r_vet_phone]" value="<%= @medical.r_vet_phone %>">
+        </div>
+      </div>
+
+      <br />
+      <div class="row">
+        <div class="input-field col s12">        
+          <label class="active" for="tfs">24/7 Emergency Vet Office Name</label><input id="tfs" type="text" name="medical[e_vet_name]" value="<%= @medical.e_vet_name %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">        
+          <label class="active" for="streetAdd">Street Address</label><input id="streetAdd" type="text" name="medical[e_vet_address]" value="<%= @medical.e_vet_address %>">
+        </div>
+        <div class="input-field col s4">        
+          <label class="active" for="cityy">City</label><input id="cityy" type="text" name="medical[e_vet_address_city]" value="<%= @medical.e_vet_address_city %>">
+        </div>
+        <div class="input-field col s4">        
+          <label class="active" for="staat">State</label><input id="staat" type="text" name="medical[e_vet_address_state]" value="<%= @medical.e_vet_address_state %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">        
+          <label class="active" for="zips">Zip Code</label><input id="zips" type="text" pattern="[0-9]*" name="medical[e_vet_address_zip]" value="<%= @medical.e_vet_address_zip %>">
+        </div>
+        <div class="input-field col s6">        
+          <label class="active" for="fone">Phone Number</label><input id="fone" type="text" name="medical[e_vet_phone]" value="<%= @medical.e_vet_phone %>">
+        </div>
+      </div>
+
+
+    <br />
+    <h5>BACKUP EMERGENCY CONTACT</h5>
+    <div class="row">
+      <div class="input-field col s6">        
+        <label class="active" for="emergName">Name</label><input id="emergName" type="text" name="medical[e_contact_name]" value="<%= @medical.e_contact_name %>">
+      </div>
+      <div class="input-field col s6">        
+        <label class="active" for="emergNum">Phone Number</label><input id="emergNum" type="text" name="medical[e_contact_phone]" value="<%= @medical.e_contact_phone %>">
+      </div>
+    </div>
+
+
+    <button class="btn waves-effect waves-light" 
+          type="submit" 
+          name="action">SUBMIT
+    </button>
+
+
+</fieldset>
+  </form>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+
+ <fieldset>
+  <legend>&nbspEdit Your Pet's Play Information&nbsp</legend>
+
+  <form action="<%= play_update_path(params[:play_id]) %>" method="post" >
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="patch">
+
+
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="active" for="favToys">Any favorite toys?</label><input id="favToys" type="text" name="play[toy]" value="<%= @play.toy %>">
+        </div>
+      </div>
+
+
+    <br />
+    <div class="row">
+      <div class="input-field col s12">
+        <label class="active" for="localParks">Which local parks are familiar for your pet?</label><input id="localParks" type="text" name="play[park]" value="<%= @play.park %>">
+      </div>
+    </div>
+
+
+    <br />
+    <div class="row">
+      <div class="input-field col s12">
+        <label class="active" for="favGames">Any games your pet likes to play?</label><input id="favGames" type="text" name="play[games]" value="<%= @play.games %>">
+      </div>
+    </div>
+
+
+    <br />
+    <div class="row">
+      <div class="input-field col s12">
+        <label class="active" for="regHabits">What are your pet's regular play habits?</label><input id="regHabits" type="text" name="play[habits]" value="<%= @play.habits %>">
+      </div>
+    </div>
+
+
+    <br />
+    <div class="row">
+      <div class="input-field col s12">
+        <label class="active" for="addDetails">Any additional play information you want to share?</label><input id="addDetails" type="text" name="play[additional_details]" value="<%= @play.additional_details %>">
+      </div>
+    </div>
+
+
+      <button class="btn waves-effect waves-light" 
+            type="submit" 
+            name="action">SUBMIT
+      </button>
+
+  </form>
+
+</fieldset>
+</div>

@@ -1,0 +1,328 @@
+<%= render partial: "static/dashboard", locals: { messages: ["Hello", "thing"] } %>
+
+
+<div class="container">
+
+
+
+<div class="row">
+
+
+<% if @care %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/leash.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">WALKS<i class="material-icons right">more_vert</i></span>
+              <p><%= @care.walk_frequency %> per day</p>
+              <p><%= @care.walk_length %> minutes per walk</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">WALKS<i class="material-icons right">close</i></span>
+              <p>Leash instructions:<br />&nbsp <%= @care.walks_leash %></p>
+              <p>Additional details:<br />&nbsp <%= @care.additional_details %></p>
+            </div>
+        </div>
+      </div>
+<% else %>   
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light" style="background-image:url(/leash.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">WALKS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">WALKS<i class="material-icons right">close</i></span>
+              <p></p>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+<% if @care %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator"  style="background-image:url(/bowl.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">FEEDING<i class="material-icons right">more_vert</i></span>
+              <p>Dry food: <%= @care.food_amount_dry %> cups, <%= @care.food_frequency_dry %> time(s) per day</p>
+              <p>Wet food: <%= @care.food_amount_wet %> cups, <%= @care.food_frequency_wet %> time(s) per day</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">FEEDING<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light" style="background-image:url(/bowl.jpg)">
+             </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">FEEDING<i class="material-icons right">more_vert</i></span>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">FEEDING<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+
+<% if @care %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/whistle.gif)" >
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">COMMANDS<i class="material-icons right">more_vert</i></span>
+              <p>Command name: &nbsp<%= @care.command_name %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">COMMANDS<i class="material-icons right">close</i></span>
+              <p>Expected behavior:<br />&nbsp<%= @care.command_description %></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/whistle.gif)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">COMMANDS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">COMMANDS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+
+
+
+  </div>
+
+
+
+  <div class="row">
+
+
+<% if @care %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/brush.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">GROOMING<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">GROOMING<i class="material-icons right">close</i></span>
+              <p>Grooming instructions:<br />&nbsp<%= @care.grooming %></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/brush.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">GROOMING<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">GROOMING<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+<!--       <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/office.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+      </div>
+ -->
+<!-- 
+        <div class="col l4 .hide-on-med-and-down">
+          <div id="centerPanel" class="card-panel teal .hide-on-med-and-down">
+            <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+            </span>
+          </div>
+        </div>
+ -->
+
+
+<% if @care %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/band-aid.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">SPECIAL NEEDS<i class="material-icons right">more_vert</i></span>
+              <p><%= @care.special_needs %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">SPECIAL NEEDS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/band-aid.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">SPECIAL NEEDS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">SPECIAL NEEDS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+
+
+
+<% if @care %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/hazard.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">FEARS<i class="material-icons right">more_vert</i></span>
+              <p><%= @care.fears %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">FEARS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>  
+  </div>
+<% else %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/hazard.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">FEARS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">FEARS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>  
+  </div>
+<% end %>
+
+
+  <div class="row">
+
+
+<!--       <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator cardPic" src="/tissue.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">ALLERGIES<i class="material-icons right">more_vert</i></span>
+              <p>&#8226 None!</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">ALLERGIES<i class="material-icons right">close</i></span>
+              <p>None.  I don't even sneeze much!  Please keep me out of the houseplants, though.  I'm not supposed to eat those.</p>
+            </div>
+        </div>
+      </div>
+
+ -->
+
+
+
+<% if @care %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/treats.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">TREATS<i class="material-icons right">more_vert</i></span>
+              <p><%= @care.treats %></p>
+                </div>
+                <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">TREATS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/treats.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">TREATS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+                </div>
+                <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">TREATS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+  </div>
+
+
+
+<% if @care %>
+<a href="<%= care_edit_path(@care.id) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Edit Care Information</a>
+
+<!--   <%= button_to "Edit Care", care_edit_path(@care.id), method: :get %>
+ -->  <% else %>
+
+<a href="<%= care_new_path(params[:pet_id]) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Care Information</a>
+
+<!--   <%= button_to "Add Care Information", care_new_path(params[:pet_id]), method: :get %>
+ -->  <% end %>
+
+</div>

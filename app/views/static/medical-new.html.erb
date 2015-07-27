@@ -1,0 +1,146 @@
+<div class="container">
+
+<fieldset>
+  <legend>&nbspEnter Your Pet's Medical Information&nbsp</legend>
+
+  <form action="<%= medical_create_path %>" method="post" >
+
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+
+
+
+    <h5>VITALS</h5>
+    <div class="row">
+        <div class="col s6"><label for="petWeight">Weight (in pounds)</label><input id="petWeight" type="integer" name="medical[weight]"></div>
+        <div class="col s6"><label for="petHeight">Height (in inches)</label><input id="petHeight" type="integer" name="medical[height]"></div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="petGender">Gender</label><input id="petGender" type="text" name="medical[gender]">
+      </div>
+      <div class="input-field col s6">
+        <label for="microchip">Microchip ID number</label><input id="microchip" type="text" name="medical[microchip_id]">
+      </div>
+    </div>
+
+
+    <br />
+    <h5>SHOTS</h5>
+    <div class="row">
+      <div class="col s6">
+        <label>Previous Shot Date</label><input type="text" id="datepicker" name="medical[pshots_date]">
+      </div>
+      <div class="col s6">
+        <label for="prevShotName">Previous Shot Name</label><input id="prevShotName" type="text" name="medical[pshots_name]">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <label>Upcoming Shot Date</label><input type="text" id="datepicker2" name="medical[ushots_date]">
+      </div>
+      <div class="col s6">
+        <label>Upcoming Shot Name</label><input type="text" name="medical[ushots_name]">
+      </div>
+    </div>
+
+
+    <br />
+    <h5>ALLERGIES</h5>
+    <div class="row">
+      <div class="input-field col s12">
+        <label for="allergies">Does your pet have any allergies?</label><input id="allergies" type="text" name="medical[allergies]">
+      </div>
+    </div>
+
+
+    <br />
+    <h5>VETERINARY CONTACT INFORMATION</h5>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="rvon">Regular Vet Office Name</label><input id="rvon" type="text" name="medical[r_vet_name]">
+        </div>
+        <div class="input-field col s6">
+          <label for="rdn">Regular Doctor's Name</label><input id="rdn" type="text" name="medical[r_vet_doctor]">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <label for="saddy">Street Address</label><input id="saddy"  type="text" name="medical[r_vet_address]">
+        </div>
+        <div class="input-field col s4">
+          <label for="city">City</label><input id="city" type="text" name="medical[r_vet_address_city]">
+        </div>
+        <div class="input-field col s4">
+          <label for="state">State</label><input id="state" type="text" name="medical[r_vet_address_state]">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="zippy">Zip Code</label><input id="zippy" type="text" pattern="[0-9]*" name="medical[r_vet_zip]">
+        </div>
+        <div class="input-field col s6">        
+          <label for="phoney">Phone Number</label><input id="phoney" type="text" name="medical[r_vet_phone]">
+        </div>
+      </div>
+
+      <br />
+      <div class="row">
+        <div class="input-field col s12">        
+          <label for="tfs">24/7 Emergency Vet Office Name</label><input id="tfs" type="text" name="medical[e_vet_name]">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">        
+          <label for="streetAdd">Street Address</label><input id="streetAdd" type="text" name="medical[e_vet_address]">
+        </div>
+        <div class="input-field col s4">        
+          <label for="cityy">City</label><input id="cityy" type="text" name="medical[e_vet_address_city]">
+        </div>
+        <div class="input-field col s4">        
+          <label for="staat">State</label><input id="staat" type="text" name="medical[e_vet_address_state]">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">        
+          <label for="zips">Zip Code</label><input id="zips" type="text" pattern="[0-9]*" name="medical[e_vet_address_zip]">
+        </div>
+        <div class="input-field col s6">        
+          <label for="fone">Phone Number</label><input id="fone" type="text" name="medical[e_vet_phone]">
+        </div>
+      </div>
+
+
+    <br />
+    <h5>BACKUP EMERGENCY CONTACT</h5>
+    <div class="row">
+      <div class="input-field col s6">        
+        <label for="emergName">Name</label><input id="emergName" type="text" name="medical[e_contact_name]">
+      </div>
+      <div class="input-field col s6">        
+        <label for="emergNum">Phone Number</label><input id="emergNumber" type="text" name="medical[e_contact_phone]">
+      </div>
+    </div>
+
+
+    <button class="btn waves-effect waves-light" 
+          type="submit" 
+          name="action">SUBMIT
+    </button>
+
+
+</fieldset>
+  </form>
+
+</div>
+
+
+
+
+
+
+
+

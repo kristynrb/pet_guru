@@ -1,0 +1,27 @@
+
+<div class="container">
+
+  <div id="pageTop" class="row">
+    <div id="topText" class="col s4 offset-s3"><class="flow-text">Pet Guru</div>
+    <div class="col s2 offset-s1"><img id="guruIcon" src="guru_icon.png"></div>
+    <a href="<%= session_path %>" id="topButton1" class="waves-effect waves-light btn">Log out</a>
+    <div class="col s2"><a id="topButton2" class="waves-effect waves-light btn">Settings</a></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h1><%= current_user.email %></h1>
+
+  <% current_user.pets.each do |pet| %>
+    <h2><%= pet.name %></h2>
+    <%= button_to "Care", care_path(pet.id), method: :get %>
+    <%= button_to "Play", play_path(pet.id), method: :get %>
+    <%= button_to "Medical", medical_path(pet.id), method: :get %>
+
+  <% end %>
+
+  <%= button_to "Log out", session_path, method: :delete %>
+
+  <div class="divider"></div>
+
+</div>

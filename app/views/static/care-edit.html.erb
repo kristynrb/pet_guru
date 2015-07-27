@@ -1,0 +1,109 @@
+<div class="container">
+
+<fieldset>
+  <legend>&nbspUpdate Your Pet's Care Info&nbsp</legend>
+
+  <form action="<%= care_update_path(params[:care_id]) %>" method="post" >
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+    <input  type="hidden" name="_method" value="patch">
+
+
+      <h5>WALKS</h5>
+      <div class="row">
+          <label>How many times per day should your pet be walked?&nbsp&nbsp</label><input type="integer" name="care[walk_frequency]" value="<%= @care.walk_frequency %>">
+      </div>
+      <div class="row">
+          <label>How long (in minutes) is each walk?&nbsp&nbsp</label><input type="integer" name="care[walk_length]" value="<%= @care.walk_length %>">
+      </div>
+      <div class="input-field row">
+        <label class="active" for="leashInstructions">Any special leash instructions?</label><input id="leashInstructions" type="text" name="care[walks_leash]" value="<%= @care.walks_leash %>"><br>
+      </div>
+      <div class="input-field row">
+        <label class="active" for="additionalDetails">Any additional details for a safe and happy walkabout?</label><input id="additionalDetails" type="text" name="care[additional_details]" value="<%= @care.additional_details %>"><br>
+      </div>
+
+      <br />
+      <h5>FEEDING</h5>
+      <div class="row">
+          <p>&nbsp&nbspDry Food:</p>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <label>Cups per feeding:&nbsp&nbsp</label><input type="integer" name="care[food_amount_dry]" value="<%= @care.food_amount_dry %>">
+        </div>
+        <div class="col s6">
+          <label>Times per day:&nbsp&nbsp</label><input type="integer" name="care[food_frequency_dry]" value="<%= @care.food_frequency_dry %>">
+        </div>
+      </div>
+      <div class="row">
+          <p>&nbsp&nbspWet Food:</p>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <label>Cups per feeding:&nbsp&nbsp</label><input type="integer" name="care[food_amount_wet]" value="<%= @care.food_amount_wet %>">
+        </div>
+        <div class="col s6">
+          <label>Times per day:&nbsp&nbsp</label><input type="integer" name="care[food_frequency_wet]" value="<%= @care.food_frequency_wet %>">
+        </div>
+      </div>
+
+
+      <br />
+      <h5>COMMANDS</h5>
+      <div class="row">
+        <div class="input-field col s6">
+          <label class="active" for="command">Is there an effective obedience command your pet knows?</label><input id="command" type="text" name="care[command_name]" value="<%= @care.command_name %>"><br>
+        </div>
+        <div class="input-field col s6">
+          <label class="active" for="commandDescription">What is your pet trained to do when this command is issued?</label><input id="commandDescription" type="text" name="care[command_description]" value="<%= @care.command_description %>"><br>
+        </div>
+      </div>
+
+
+      <br />
+      <h5>GROOMING INSTRUCTIONS</h5>
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="active" for="groomingInstructions">What the grooming procedure for your pet?</label><input id="groomingInstructions" type="text" name="care[grooming]" value="<%= @care.grooming %>">
+        </div>
+      </div>
+
+
+      <br />
+      <h5>SPECIAL NEEDS</h5>
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="active" for="specialNeeds">Is there anything special your pet needs?</label><input id="specialNeeds" type="text" name="care[special_needs]" value="<%= @care.special_needs %>"><br>
+        </div>
+      </div>
+
+
+      <br />
+      <h5>FEARS</h5>
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="active" for="fearList">Please list any fears your pet has</label><input id="fearList" type="text" name="care[fears]" value="<%= @care.fears %>"><br>
+        </div>
+      </div>
+
+
+      <br />
+      <h5>TREATS</h5>
+      <div class="row">
+        <div class="input-field col s12">
+          <label class="active" for="treatList">Any treats or rewards for good behavior?</label><input id="treatList" type="text" name="care[treats]" value="<%= @care.treats %>"><br>
+        </div>
+      </div>
+
+
+      <button class="btn waves-effect waves-light"
+            type="submit"
+            name="action">SUBMIT
+      </button>
+
+    </fieldset>
+    </form>
+
+  </div>

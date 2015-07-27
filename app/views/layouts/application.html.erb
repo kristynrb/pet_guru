@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PetGuru</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</head>
+<body>
+
+<%= yield %>
+
+<% if flash[:message] %>
+  <div class="message">
+    <%= flash[:message] %>
+  </div>
+  <br />
+<% end %>
+<script>
+
+ $(function() {
+   $( "#datepicker" ).datepicker();
+ });
+
+ $(function() {
+   $( "#datepicker2" ).datepicker();
+ });
+
+ $(document).ready(function() {
+  $('select').material_select();
+ });
+
+$(function() {
+  $( document ).tooltip({ show: { delay: 10 }});
+});
+
+
+ </script>
+</body>
+</html>

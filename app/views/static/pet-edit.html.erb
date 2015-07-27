@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Update your pet information</h2>
+
+
+  <form action="<%= dashboard_path %>" method="post" enctype="multipart/form-data" accept-charset="UTF-8" >
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+    <input  type="hidden" name="_method" value="patch">
+
+    <div class="row">
+      <label>Pet's Name</label><input type="text" name="pet[name]" value="<%= @pet.name %>">
+    </div>
+    <div class="row">
+      <label>Pet's Breed</label><input type="text" name="pet[breed]" value="<%= @pet.breed %>">
+    </div>
+    <div class="row">
+      <label>Color</label><input type="text" name="pet[color]" value="<%= @pet.color %>">
+    </div>
+    <div class="row">
+      <label>Pet's Age</label><input type="text" name="pet[birthday]" value="<%= @pet.birthday %>">
+    </div>
+    <div class="row">
+      <label>What would your pet say if they could speak?</label><input type="text" name="pet[would_say]" value="<%= @pet.would_say %>">
+    </div>
+
+
+    <div class="file-field input-field">
+      <input class="file-path validate" type="text"/>
+      <div class="btn">
+        <span>File</span>
+        <input type="file" name="pet[avatar]" id="pet_avatar"/>
+      </div>
+    </div>
+    <br>
+    <button class="btn waves-effect waves-light"
+            type="submit"
+            name="action">FINISHED
+    </button>
+    <br>
+    <a href="<%= dashboard_path(current_user.id) %>">CANCEL</a>
+
+</div>

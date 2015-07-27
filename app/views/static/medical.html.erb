@@ -1,0 +1,278 @@
+<%= render partial: "static/dashboard", locals: { messages: ["Hello", "thing"] } %>
+
+
+<div class="container">
+
+
+
+<div class="row">
+
+
+<% if @medical %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/vitals.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">VITALS<i class="material-icons right">more_vert</i></span>
+                <p>Weight:  <%= @medical.weight %> lbs</p>
+                <p>Height: <%= @medical.height %> inches</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">VITALS<i class="material-icons right">close</i></span>
+              <p>Microchip ID Number: <%= @medical.microchip_id %></p>
+              <p>Gender: <%= @medical.gender %></p>
+            </div>
+        </div>
+      </div>
+<% else %>   
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/vitals.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">VITALS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">VITALS<i class="material-icons right">close</i></span>
+              <p></p>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+<% if @medical %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/syringe.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">SHOTS<i class="material-icons right">more_vert</i></span>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">SHOTS<i class="material-icons right">close</i></span>
+                <dt>Shots - Previous</dt>
+                  <dd>Date: <%= @medical.pshots_date %></dd>
+                  <dd>Shot Name: <%= @medical.pshots_name %></dd>
+                <dt>Shots - Upcoming</dt>
+                  <dd>Date: <%= @medical.ushots_date %></dd>
+                  <dd>Shot Name: <%= @medical.ushots_name %></dd></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12">
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/syringe.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">SHOTS<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">SHOTS<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+
+<% if @medical %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/tissue.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">ALLERGIES<i class="material-icons right">more_vert</i></span>
+              <p><%= @medical.allergies %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">ALLERGIES<i class="material-icons right">close</i></span>
+                <p></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/tissue.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">ALLERGIES<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">ALLERGIES<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+</div>
+<div class="row">
+
+
+<% if @medical %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/vet.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">REGULAR VET<i class="material-icons right">more_vert</i></span>
+              <p>Vet Name: <%= @medical.r_vet_name %></p>
+              <p>Phone number: <%= @medical.r_vet_phone %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">REGULAR VET<i class="material-icons right">close</i></span>
+              <p>Doctor's Name: <%= @medical.r_vet_doctor %></p>
+              <p>Address: <%= @medical.r_vet_address %></p>
+              <p>City: <%= @medical.r_vet_address_city %></p>
+              <p>State: <%= @medical.r_vet_address_state %></p>
+              <p>Zip: <%= @medical.r_vet_zip %></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/vet.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">REGULAR VET<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">REGULAR VET<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+
+
+
+<% if @medical %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/redcross.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">24/7 HOSPITAL<i class="material-icons right">more_vert</i></span>
+              <p>Vet Name: <%= @medical.e_vet_name %></p>
+              <p>Phone number: <%= @medical.e_vet_phone %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">24/7 HOSPITAL<i class="material-icons right">close</i></span>
+                <p>Address: <%= @medical.e_vet_address %></p>
+                <p>City: <%= @medical.e_vet_address_city %></p>
+                <p>State: <%= @medical.e_vet_address_state %></p>
+                <p>Zip: <%= @medical.e_vet_address_zip %></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/redcross.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">24/7 HOSPITAL<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">24/7 HOSPITAL<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+<% if @medical %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/helpPhone.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">EMERGENCY CONTACT<i class="material-icons right">more_vert</i></span>
+              <p>Contact Name: <%= @medical.e_contact_name %></p>
+              <p>Phone Number: <%= @medical.e_contact_phone %></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">EMERGENCY CONTACT<i class="material-icons right">close</i></span>
+                <p></p>
+            </div>
+        </div>
+      </div>
+<% else %>
+      <div class="col l4 m6 s12"> 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light activator" style="background-image:url(/helpPhone.jpg)">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">EMERGENCY CONTACT<i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">EMERGENCY CONTACT<i class="material-icons right">close</i></span>
+              <p></p>
+            </div>
+        </div>
+      </div>
+<% end %>
+
+
+
+
+
+
+</div>
+
+
+<!--   <h5>The Vitals</h5><br>
+
+
+  <h5>Shots</h5>
+
+
+    <dd>Allergies: </dd>
+
+  <h5>Contacts</h5>
+  <dt>Regular Vet</dt>
+    <dd></dd>
+    
+    <dd></dd>
+
+  <dt>Emergency 24/7 Hospital</dt>
+    <dd></dd>
+   
+    <dd></dd>
+
+  <dt>Backup Emergency Contact Number</dt>
+    <dd></dd>
+    <dd></dd> -->
+  <% if @medical %>
+
+<a href="<%= medical_edit_path(@medical.id) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Edit Medical Information</a>
+
+
+<!--   <%= button_to "Edit Medical", medical_edit_path(@medical.id), method: :get %>
+ -->  <% else %>
+
+<a href="<%= medical_new_path(params[:pet_id]) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Add Medical Information</a>
+
+
+<!--   <%= button_to "Add Medical Information", medical_new_path(params[:pet_id]), method: :get %>
+ -->  <% end %>
+
+</div>

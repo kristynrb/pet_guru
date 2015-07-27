@@ -1,0 +1,91 @@
+
+<div class="container">
+
+  <% pet = current_user.pets.first %>
+
+  <div class="section">
+    <div id="pageTop" class="row">
+      <div id="topText" class="col s4 offset-l3">PetGuru</div>
+      <div class="col s2 hide-on-small-only"><img id="guruIcon" src="/guru_icon.png"></div>
+      <div class="col s1 offset-s1">
+
+        <form id="topButton1" action="<%= session_path %>" method="post">
+          <button class="btn waves-effect waves-light" type="submit">Logout</button>
+          <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+          <input  type="hidden" name="_method" value="delete">
+        </form>
+
+        <% if current_user.pets.any? %>
+        <a href="<%= questionnaireEdit_path(pet.id) %>" id="topButton2" class="waves-effect waves-light btn">Edit&nbspPet&nbspInfo</a>
+        <% else %>
+        <a href="<%= questionnaire_path %>" id="topButton2" class="waves-effect waves-light btn">Create&nbspPet&nbspInfo</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div id="thisPet" class="row">
+      <div id="thisPetPic" class="col s3">
+
+        <% if current_user.pets.any? && pet.avatar_file_name %>
+
+        <img src="<%= pet.avatar.url(:thumb) %>">
+
+        <% elsif current_user.pets.any? %>
+
+        <a href="<%= questionnaireEdit_path(pet.id) %>"><img title="Add a photo!" src='/addphoto.png'></a>
+
+        <% else %>
+
+        <a href="<%= questionnaire_path %>"><img title="Get started by adding your first pet!" src='/addphoto.png'></a>
+
+        <% end %>
+
+      </div>
+
+      <div class="col s5">
+
+        <% if current_user.pets.any? %>
+            <p id="thisPetName-<%= pet.id %>" class="pet-name"><%= pet.name %></p>
+            <p>"<%= pet.would_say %>"</p>
+            <p><%= pet.birthday %></p>
+            <p><%= pet.breed %></p>
+        <% end %>
+
+      </div>
+
+
+      <div class="col s1 l1 m1 offset-l3" id="yourPetsSection">
+        <div id="morePets">
+<!--           <p>Add another pet</p> -->
+          <!-- <div class="left" id="nextPetPic"><a href="#"><img src="/germanShep.jpg"></a></div> -->
+          <div class="left" id="plusBox"><a href="#"><img title="Adding additional pets coming soon!" src="/plus.jpg"></a></div>
+          <div class="right" id="plusBox">
+            <a href="#"><i title="Share with chaperone coming soon!" class="medium material-icons grey-text text-darken-1">person_pin</i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <% if current_user.pets.any? %>
+    <div id="mainButtons" class="row">
+      <a href="<%= care_path(pet.id) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Care</a>
+      <a href="<%= play_path(pet.id) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Play</a>
+      <a href="<%= medical_path(pet.id) %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Medical</a>
+    </div>
+    <% end %>
+  </div>
+
+
+  <div class="divider"></div>
+
+
+
+
+</div>

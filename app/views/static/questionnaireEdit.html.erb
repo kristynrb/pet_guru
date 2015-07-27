@@ -1,0 +1,57 @@
+
+<div class="container">
+
+<fieldset>
+  <legend>&nbspUpdate Your Pet's Info&nbsp</legend>
+
+
+  <form action="<%= pet_path(@pet.id) %>" method="post" enctype="multipart/form-data" accept-charset="UTF-8" >
+    <input  type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+    <input  type="hidden" name="_method" value="patch">
+        
+
+    <div class="input-field row">
+        <label class="active" for="petName">NAME</label><input id="petName" type="text" name="pet[name]" value="<%= @pet.name %>">
+    </div>  
+
+    <div class="input-field row">
+        <label class="active" for="petBreed">TYPE / BREED</label><input id="petBreed" type="text" name="pet[breed]" value="<%= @pet.breed %>">
+    </div>  
+
+    <div class="input-field row">
+        <label class="active" for="petColor">COLOR</label><input id="petColor" type="text" name="pet[color]" value="<%= @pet.color %>">
+    </div>  
+
+    <div class="input-field row">
+        <label class="active" for="petBirthday">AGE</label><input id="petBirthday" type="text" name="pet[birthday]" value="<%= @pet.birthday %>">
+    </div>  
+
+    <div class="input-field row">
+        <label class="active" for="petSpeak">What would your pet say if they could speak?</label><input id="petSpeak" type="text" name="pet[would_say]" value="<%= @pet.would_say %>">
+    </div>  
+
+
+    <div id="fileUpload" class="file-field input-field row">
+      <input class="file-path validate" type="text"/>
+      <div id="fileUpload2" class="btn">
+        <span>Upload a photo!</span>
+        <input type="file" name="pet[avatar]" id="pet_avatar"/>
+      </div>
+    </div>
+
+
+    <button class="btn waves-effect waves-light" 
+            type="submit" 
+            name="action">FINISHED
+    </button>
+
+</fieldset>
+
+<!--     <br />
+    <br />
+    <a href="<%= dashboard_path(current_user.id) %>">SKIP FOR NOW</a> -->
+
+</div>
+
